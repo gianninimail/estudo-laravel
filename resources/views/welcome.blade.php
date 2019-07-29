@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Curso de Laravel 5.3
                 </div>
 
                 <div class="links">

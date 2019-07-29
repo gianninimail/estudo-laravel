@@ -10,7 +10,27 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['namespace' => 'Site'/*, 'middleware' => 'auth'*/], function() {
 
-Route::get('/', function () {
-    return view('welcome');
+    Route::get('/', 'SiteController@index');
+    Route::get('/contato', 'SiteController@contato');
+
+    Route::get('/categoria/{id}', 'SiteController@categoria');
+    Route::get('/categoriaOp/{id?}', 'SiteController@categoriaOption');
+});
+
+
+Route::group(['prefix' => 'painel'], function() {
+    
+    Route::get('/users', function() {
+        return 'Controle de usuários';
+    });
+
+    Route::get('/financeiro', function() {
+        return 'Painel financeiro';
+    });
+
+    Route::get('/', function() {
+        return 'Dashboard';
+    });
 });
